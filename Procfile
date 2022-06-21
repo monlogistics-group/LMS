@@ -1,1 +1,1 @@
-web: python3 odoo-bin
+web: python odoo/odoo-bin --init --addons-path=./addons --db_host="ec2-52-72-99-110.compute-1.amazonaws.com" --db_user="ztcrvufleyynpg" --db_password="8210a0c81eda9d6d3118350073a3c76e535d861995463b106f30e676ae66f0fb" -d d8pg94toemkq2i --stop-after-init
