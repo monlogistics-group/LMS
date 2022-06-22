@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <act_window id="action_lms_operation" name="LMS General" res_model="lms.general" view_mode="tree,form" />
+    <menuitem
+        id="menu_lms"
+        name="LMS - MLTr"
+        action="action_lms_operation"/>
+</odoo>
