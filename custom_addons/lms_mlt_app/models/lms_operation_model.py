@@ -1,13 +1,14 @@
 # -*- coding: utf-8 -*-
+from odoo import models, fields, api, _
 
-from odoo import models, fields, api
 
 class General(models.Model):
     _name = 'lms.general'
     _description = 'LMS general information'
 
     customer_id = fields.Many2one('res.partner', string='Customer')
-    general_ref = fields.Char(string='General REF', readonly=True, required=True)
+    general_ref = fields.Char(
+        string='General REF', required=True, readonly=True, default=lambda self: _('New'))
     gross_weigth = fields.Float(string="Gross Weight (kg)")
     volume = fields.Float(string="CBM (㎥)")
     package_qty = fields.Float(string="Package Quantity")
@@ -27,10 +28,11 @@ class General(models.Model):
     contact_details = fields.Text(string="Contact Details")
     temprature = fields.Float(string="Package Temprature")
     fleet_id = fields.Many2one('fleet.vehicle', string="Trucks")
-    notice = fields.Text(string="Noitce")
+    notice = fields.Text(string="Notice")
 
     @api.model
     def create(self, vals):
         if vals.get('general_ref', _('New')) == _('New'):
-            vals['general_ref'] = self.env['ir.sequence'].next_by_code('lms.general') or _("New")
-        return super(General, self).create(vals)
+            vals['general_ref'] = self.env['ir.sequence'].next_by_code('lms.general') or _('New')
+        res = super(General, self).create(vals)
+        return res

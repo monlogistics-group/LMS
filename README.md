@@ -1,32 +1,42 @@
-[![Build Status](https://runbot.odoo.com/runbot/badge/flat/1/master.svg)](https://runbot.odoo.com/runbot)
-[![Tech Doc](https://img.shields.io/badge/master-docs-875A7B.svg?style=flat&colorA=8F8F8F)](https://www.odoo.com/documentation/15.0)
-[![Help](https://img.shields.io/badge/master-help-875A7B.svg?style=flat&colorA=8F8F8F)](https://www.odoo.com/forum/help-1)
-[![Nightly Builds](https://img.shields.io/badge/master-nightly-875A7B.svg?style=flat&colorA=8F8F8F)](https://nightly.odoo.com/)
 
-Odoo
-----
+# Logistics Management System (Odoo)
+![](https://scontent.fuln6-1.fna.fbcdn.net/v/t39.30808-6/271411498_449003416828083_575926474610663720_n.png?_nc_cat=101&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeH4F9tdRFXxfToRD39VGE0jeQEo4jfuiyN5ASjiN-6LIxHfr6sx6PqVhduOs8HElokP4jw8HItt4iVR17uxp9IZ&_nc_ohc=mYUzxm-zHhAAX__CpXP&_nc_ht=scontent.fuln6-1.fna&oh=00_AT_qTspZAwNCPjyHx1n5WAZCcOw1MNkGl7BCBNxrDGi42Q&oe=62B96E35)
 
-Odoo is a suite of web based open source business apps.
+### Branches
+1. MLTrucking
+2. MLWorldWide
+3. MLTransit
+4. MLCargo
+5. MLHolding
 
-The main Odoo Apps include an <a href="https://www.odoo.com/page/crm">Open Source CRM</a>,
-<a href="https://www.odoo.com/app/website">Website Builder</a>,
-<a href="https://www.odoo.com/app/ecommerce">eCommerce</a>,
-<a href="https://www.odoo.com/app/inventory">Warehouse Management</a>,
-<a href="https://www.odoo.com/app/project">Project Management</a>,
-<a href="https://www.odoo.com/app/accounting">Billing &amp; Accounting</a>,
-<a href="https://www.odoo.com/app/point-of-sale-shop">Point of Sale</a>,
-<a href="https://www.odoo.com/app/employees">Human Resources</a>,
-<a href="https://www.odoo.com/app/social-marketing">Marketing</a>,
-<a href="https://www.odoo.com/app/manufacturing">Manufacturing</a>,
-<a href="https://www.odoo.com/">...</a>
 
-Odoo Apps can be used as stand-alone applications, but they also integrate seamlessly so you get
-a full-featured <a href="https://www.odoo.com">Open Source ERP</a> when you install several Apps.
+## Орчин бэлдэх заавар (Ubuntu):
+1. Git -ээс эх код татах
+```
+git clone https://github.com/monlogistics-group/LMS.git
+```
+2. PostgreSQL суулгах
+```
+sudo apt install postgresql postgresql-client
 
-Getting started with Odoo
--------------------------
+sudo -u postgres createuser -s $USER
 
-For a standard installation please follow the <a href="https://www.odoo.com/documentation/15.0/administration/install.html">Setup instructions</a>
-from the documentation.
+createdb $USER
+```
+3. Ubuntu сан суулгах
 
-To learn the software, we recommend the <a href="https://www.odoo.com/slides">Odoo eLearning</a>, or <a href="https://www.odoo.com/page/scale-up-business-game">Scale-up</a>, the <a href="https://www.odoo.com/page/scale-up-business-game">business game</a>. Developers can start with <a href="https://www.odoo.com/documentation/15.0/developer/howtos.html">the developer tutorials</a>
+```
+sudo apt install python3-dev libxml2-dev libxslt1-dev libldap2-devlibsasl2-dev \
+    libtiff5-dev libjpeg8-dev libopenjp2-7-dev zlib1g-dev libfreetype6-dev \
+    liblcms2-dev libwebp-dev libharfbuzz-dev libfribidi-dev libxcb1-dev libpq-dev
+```
+4. Python орчин суулгах
+```
+pip3 install setuptools wheel
+
+pip3 install -r requirements.txt
+```
+5. Odoo-г ажлуулах
+```
+python3 odoo-bin --addons-path=addons -d mydb
+```

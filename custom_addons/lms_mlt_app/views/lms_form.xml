@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- LMS GENERAL FORM -->
+    <record id="view_form_lms" model="ir.ui.view">
+        <field name="name">lms.general.form</field>
+        <field name="model">lms.general</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="general_ref" readonly="1" />
+                        </h1>
+                    </div>
+                    <group name="group_top">
+                        <group name="group_left">
+                            <field name="customer_id" widget="res_partner_many2one" options="{'always_reload': True}" />
+
+                            <field name="gross_weigth" />
+                            <field name="volume"/>
+                            <field name="package_qty"/>
+                            <field name="package_img" widget="image"/>
+                            <field name="freigth_types"/>
+                            <field name="package_name"/>
+                            <field name="origin_country" />
+                            <field name="origin_address"/>
+                            <field name="destination_country"/>
+                        </group>
+                        <group name="group_right">
+                            <field name="destination_delivery" />
+                            <field name="pickup_date"/>
+                            <field name="delivery_date"/>
+                            <field name="estimated_cost" />
+                            <field name="mltr_cost"/>
+                            <field name="contact_name"/>
+                            <field name="contact_details"/>
+                            <field name="temprature"/>
+                            <field name="fleet_id" widget="fleet_vehicle_many2one" options="{'always_reload': True}"/>
+                            <field name="notice"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
