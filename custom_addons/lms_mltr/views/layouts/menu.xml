@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <menuitem id="menu_lms" name="LMS" web_icon="lms_mltr,static/description/icon.png"/>
-    <menuitem 
-        id="lms_operation_menu"
-        name="Operation"
-        parent="menu_lms"
-        sequence="1"
-    />
-    <menuitem 
-        id="lms_config_menu"
-        name="Configration"
-        parent="menu_lms"
-        sequence="2"
-    />
+	<!-- Main Menu -->
+	<menuitem id="menu_lms" name="LMS" web_icon="lms_mltr,static/description/icon.png" />
+	<!-- Operational Menu -->
+	<menuitem id="lms_operation_menu" name="Operation" parent="menu_lms" sequence="1" />
+	<!-- Configuration Menu -->
+	<menuitem id="lms_config_menu" name="Configration" parent="menu_lms" sequence="2" />
+	<menuitem id="lms_freight_types_menu" name="Freight Type" parent="lms_config_menu" action="lms_freight_type_datas_action" />
+	<menuitem id="lms_operation_types_menu" name="Operation Type" parent="lms_config_menu" action="lms_operation_type_datas_action" />
 </odoo>

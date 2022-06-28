@@ -13,7 +13,8 @@ class General(models.Model):
     volume = fields.Float(string="CBM (㎥)")
     package_qty = fields.Float(string="Package Quantity")
     package_img = fields.Image(string="Package Images")
-    freigth_types = fields.Many2one('lms.freight.type.datas',string="Freigth Types")
+    freigth_types = fields.Many2one(
+        'lms.freight.type.datas', string="Freigth Types")
     package_name = fields.Char(string="Package Name")
     origin_country = fields.Many2one('res.country', string='Origin Country')
     origin_address = fields.Text(string="Origin Address")
@@ -33,6 +34,7 @@ class General(models.Model):
     @api.model
     def create(self, vals):
         if vals.get('general_ref', _('New')) == _('New'):
-            vals['general_ref'] = self.env['ir.sequence'].next_by_code('lms.general') or _('New')
+            vals['general_ref'] = self.env['ir.sequence'].next_by_code(
+                'lms.general') or _('New')
         res = super(General, self).create(vals)
         return res

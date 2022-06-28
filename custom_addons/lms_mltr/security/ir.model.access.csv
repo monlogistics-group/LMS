@@ -1,3 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_lms_general,lms.general,model_lms_general,base.group_user,1,1,1,1
 access_lms_freight_type_datas,lms.freight.type.datas,model_lms_freight_type_datas,base.group_user,1,1,1,1
+access_lms_operation_type_datas,lms.operation.type.datas,model_lms_operation_type_datas,base.group_user,1,1,1,1

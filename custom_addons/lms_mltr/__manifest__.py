@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 {
     'name': "LMS /MLTr/",
     'summary': """
@@ -16,6 +15,7 @@
         'security/ir.model.access.csv',
         'views/assets/sequence.xml',
         'views/datas/freight_type.xml',
+        'views/datas/operation_type.xml',
         'views/layouts/menu.xml',
         'views/models/general.xml'
     ],
