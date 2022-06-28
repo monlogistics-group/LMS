@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "LMS - MLTr",
+    'name': "LMS /MLTr/",
     'summary': """
         Logistics Management System for MLTrucking LLC""",
     'description': """
@@ -14,10 +14,10 @@
     'depends': ['base','fleet','contacts'],
     'data': [
         'security/ir.model.access.csv',
-        'views/lms_menu.xml',
-        'views/lms_view.xml',
-        'views/lms_form.xml',
-        'views/lms_sequence.xml',
+        'views/assets/sequence.xml',
+        'views/datas/freight_type.xml',
+        'views/layouts/menu.xml',
+        'views/models/general.xml'
     ],
     "installable": True,
     "application": True,

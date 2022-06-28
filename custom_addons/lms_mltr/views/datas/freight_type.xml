@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="lms_master_datas_action" model="ir.actions.act_window">
+        <field name="name">Freight Type</field>
+        <field name="res_model">lms.freight.type.datas</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <record id="lms_master_datas_form" model="ir.ui.view">
+        <field name="name">lms.datas.freight.form</field>
+        <field name="model">lms.freight.type.datas</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="description" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="lms_master_datas_tree" model="ir.ui.view">
+        <field name="name">lms.datas.freight.tree</field>
+        <field name="model">lms.freight.type.datas</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="description" />
+            </tree>
+        </field>
+    </record>
+
+    <menuitem
+        id="lms_freight_types_menu"
+        name="Freigth Type"
+        parent="lms_config_menu"
+        action="lms_master_datas_action"
+    />
+</odoo>

@@ -1,7 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <!-- LMS GENERAL FORM -->
-    <record id="view_form_lms" model="ir.ui.view">
+    <!-- General Action -->
+    <record id="lms_general_action" model="ir.actions.act_window">
+        <field name="name">LMS General</field>
+        <field name="res_model">lms.general</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- General Tree List view -->
+    <record id="lms_general_view_tree" model="ir.ui.view">
+        <field name="name">LMS Tree</field>
+        <field name="model">lms.general</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="general_ref" />
+                <field name="origin_country" />
+                <field name="destination_country" />
+            </tree>
+        </field>
+    </record>
+    <!-- General search view -->
+    <record id="lms_general_view_search" model="ir.ui.view">
+        <field name="name">LMS Filters</field>
+        <field name="model">lms.general</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="general_ref" />
+            </search>
+        </field>
+    </record>
+    <!-- General Form View -->
+    <record id="lms_general_view_form" model="ir.ui.view">
         <field name="name">lms.general.form</field>
         <field name="model">lms.general</field>
         <field name="arch" type="xml">
@@ -43,4 +71,11 @@
             </form>
         </field>
     </record>
+
+    <menuitem
+        id="lms_general"
+        name="General"
+        parent="lms_operation_menu"
+        action="lms_general_action"
+    />
 </odoo>

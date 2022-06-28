@@ -13,7 +13,7 @@ class General(models.Model):
     volume = fields.Float(string="CBM (㎥)")
     package_qty = fields.Float(string="Package Quantity")
     package_img = fields.Image(string="Package Images")
-    freigth_types = fields.Char("Freigth Types")
+    freigth_types = fields.Many2one('lms.freight.type.datas',string="Freigth Types")
     package_name = fields.Char(string="Package Name")
     origin_country = fields.Many2one('res.country', string='Origin Country')
     origin_address = fields.Text(string="Origin Address")
