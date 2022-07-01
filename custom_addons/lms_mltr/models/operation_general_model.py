@@ -7,8 +7,8 @@ class General(models.Model):
     _description = 'LMS general information'
 
     customer_id = fields.Many2one('res.partner', string='Customer')
-    general_ref = fields.Char(
-        string='General REF', required=True, readonly=True, default=lambda self: _('New'))
+    name = fields.Char(
+        string='REF', required=True, readonly=True, default=lambda self: _('New'))
     gross_weigth = fields.Float(string="Gross Weight (kg)")
     volume = fields.Float(string="CBM (㎥)")
     package_qty = fields.Float(string="Package Quantity")
@@ -33,8 +33,8 @@ class General(models.Model):
 
     @api.model
     def create(self, vals):
-        if vals.get('general_ref', _('New')) == _('New'):
-            vals['general_ref'] = self.env['ir.sequence'].next_by_code(
+        if vals.get('name', _('New')) == _('New'):
+            vals['name'] = self.env['ir.sequence'].next_by_code(
                 'lms.general') or _('New')
         res = super(General, self).create(vals)
         return res

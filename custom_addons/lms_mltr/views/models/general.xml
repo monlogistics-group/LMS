@@ -2,60 +2,58 @@
 <odoo>
 	<!-- General Action -->
 	<record id="lms_general_action" model="ir.actions.act_window">
-		<field name="name">
-			LMS General
-		</field>
-		<field name="res_model">
-			lms.general
-		</field>
-		<field name="view_mode">
-			tree,form
-		</field>
+		<field name="name">LMS General</field>
+		<field name="res_model">lms.general</field>
+		<field name="view_mode">kanban,tree,form</field>
 	</record>
 	<!-- General Tree List view -->
 	<record id="lms_general_view_tree" model="ir.ui.view">
-		<field name="name">
-			LMS Tree
-		</field>
-		<field name="model">
-			lms.general
-		</field>
+		<field name="name">LMS Tree</field>
+		<field name="model">lms.general</field>
 		<field name="arch" type="xml">
 			<tree>
-				<field name="general_ref" />
+				<field name="name" />
 				<field name="origin_country" />
 				<field name="destination_country" />
 			</tree>
 		</field>
 	</record>
+	<!-- General Kanban List view -->
+	<record id="lms_general_view_tree" model="ir.ui.view">
+		<field name="name">LMS Tree</field>
+		<field name="model">lms.general</field>
+		<field name="arch" type="xml">
+			<kanban>
+				<templates>
+					<t t-name="kanban-box">
+						<div>
+							<field name="name"/>
+						</div>
+					</t>
+				</templates>
+			</kanban>
+		</field>
+	</record>
 	<!-- General search view -->
 	<record id="lms_general_view_search" model="ir.ui.view">
-		<field name="name">
-			LMS Filters
-		</field>
-		<field name="model">
-			lms.general
-		</field>
+		<field name="name">LMS Filters</field>
+		<field name="model">lms.general</field>
 		<field name="arch" type="xml">
 			<search>
-				<field name="general_ref" />
+				<field name="name" />
 			</search>
 		</field>
 	</record>
 	<!-- General Form View -->
 	<record id="lms_general_view_form" model="ir.ui.view">
-		<field name="name">
-			lms.general.form
-		</field>
-		<field name="model">
-			lms.general
-		</field>
+		<field name="name">lms.general.form</field>
+		<field name="model">lms.general</field>
 		<field name="arch" type="xml">
 			<form>
 				<sheet>
 					<div class="oe_title">
 						<h1>
-							<field name="general_ref" readonly="1" />
+							<field name="name" readonly="1" />
 						</h1>
 					</div>
 					<group name="group_top">
@@ -77,7 +75,7 @@
 							<field name="delivery_date" />
 							<field name="estimated_cost" />
 							<field name="mltr_cost" />
-							<field name="contact_name" />
+							<field name="contact_name" widget="google_places"/>
 							<field name="contact_details" />
 							<field name="temprature" />
 							<field name="fleet_id" widget="fleet_vehicle_many2one" options="{'always_reload': True}" />
