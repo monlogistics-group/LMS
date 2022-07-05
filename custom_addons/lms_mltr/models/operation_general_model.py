@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from odoo import models, fields, api, _
 
-
 class General(models.Model):
     _name = 'lms.general'
     _description = 'LMS general information'
@@ -30,6 +29,7 @@ class General(models.Model):
     temprature = fields.Float(string="Package Temprature")
     fleet_id = fields.Many2one('fleet.vehicle', string="Trucks")
     notice = fields.Text(string="Notice")
+    state = fields.Many2one('lms.general.status', required=True)
 
     @api.model
     def create(self, vals):

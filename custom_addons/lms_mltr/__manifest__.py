@@ -1,5 +1,5 @@
 {
-    'name': "LMS /MLTr/",
+    'name': "LMS (MLTrucking)",
     'summary': """
         Logistics Management System for MLTrucking LLC""",
     'description': """
@@ -16,8 +16,12 @@
         'views/assets/sequence.xml',
         'views/datas/freight_type.xml',
         'views/datas/operation_type.xml',
+        'views/datas/operation_status.xml',
         'views/layouts/menu.xml',
         'views/models/general.xml'
+    ],
+    'demo': [
+        'demo/general_status.xml'
     ],
     "installable": True,
     "application": True,
