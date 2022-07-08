@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record model="lms.freight.type.datas" id="1">
+            <field name="active">True</field>
+            <field name="name">FTL</field>
+            <field name="description">Full Truckload</field>
+        </record>
+
+        <record model="lms.freight.type.datas" id="2">
+            <field name="active">True</field>
+            <field name="name">LTL</field>
+            <field name="description">Less than truckload</field>
+        </record>
+
+        <record model="lms.freight.type.datas" id="3">
+            <field name="active">True</field>
+            <field name="name">FCL</field>
+            <field name="description">Full Containerload</field>
+        </record>
+
+        <record model="lms.freight.type.datas" id="4">
+            <field name="active">True</field>
+            <field name="name">LCL</field>
+            <field name="description">Less than Containerload</field>
+        </record>
+
+        <record model="lms.freight.type.datas" id="5">
+            <field name="active">True</field>
+            <field name="name">AIR</field>
+            <field name="description">Air loading</field>
+        </record>
+
+        <record model="lms.freight.type.datas" id="6">
+            <field name="active">True</field>
+            <field name="name">Train</field>
+            <field name="description">Train Loading</field>
+        </record>
+
+        <record model="lms.freight.type.datas" id="7">
+            <field name="active">True</field>
+            <field name="name">Wagon</field>
+            <field name="description">Wagon loading</field>
+        </record>
+    </data>
+</odoo>

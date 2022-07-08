@@ -14,6 +14,7 @@
                 <sheet>
                     <group>
                         <field name="active"/>
+                        <field name="default"/>
                         <field name="name"/>
                         <field name="description"/>
                     </group>
@@ -27,7 +28,8 @@
         <field name="model">lms.general.status</field> 
         <field name="arch" type="xml">
             <tree>
-                <field name="active"/>
+                <field name="id" widget="handle"/>
+                <field name="default"/>
                 <field name="name"/>
                 <field name="description"/>
             </tree>

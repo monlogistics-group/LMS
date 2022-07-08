@@ -21,7 +21,9 @@
         'views/models/general.xml'
     ],
     'demo': [
-        'demo/general_status.xml'
+        'demo/general_status.xml',
+        'demo/freight_ types.xml',
+        'demo/operation_types.xml'
     ],
     "installable": True,
     "application": True,

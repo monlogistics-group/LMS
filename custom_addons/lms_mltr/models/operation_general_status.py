@@ -5,7 +5,9 @@ class GeneralStatus(models.Model):
     _description = 'Status for general status'
 
     active = fields.Boolean(default=True)
-    name = fields.Char(string="Name", required=True, default='Started')
+    id = fields.Integer()
+    default = fields.Boolean()
+    name = fields.Char(string="Name", required=True)
     description = fields.Char(string="Description")
     general_id = fields.One2many('lms.general','state')
 

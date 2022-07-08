@@ -12,7 +12,7 @@
 			<form>
 				<sheet>
 					<group>
-						<field name="operation_id"/>
+						<field name="active"/>
 						<field name="name" />
 						<field name="description" />
 					</group>
@@ -25,8 +25,8 @@
 		<field name="model">lms.operation.type.datas</field>
 		<field name="arch" type="xml">
 			<tree>
-				<field name="operation_id" />
-				<field name="name" />
+				<field name="id" widget="handle"/>
+				<field name="name"/>
 				<field name="description" />
 			</tree>
 		</field>

@@ -3,36 +3,42 @@
     <data noupdate="1">
         <record model="lms.general.status" id="1">
             <field name="active">True</field>
+            <field name="default">True</field>
             <field name="name">Started</field>
             <field name="description">Configure Cloudflare, FREE Let's Encrypt SSL/TLS certificate, NGINX and Apache web servers, create CSR SSL request</field>
         </record>
 
         <record model="lms.general.status" id="2">
             <field name="active">True</field>
+            <field name="default">False</field>
             <field name="name">Filled</field>
             <field name="description">Complete Git and GitHub guide (23 HOURS) - Master all Git features: commits, branches, merging, rebasing and squashing</field>
         </record>
 
         <record model="lms.general.status" id="3">
             <field name="active">True</field>
+            <field name="default">False</field>
             <field name="name">Sent</field>
             <field name="description">Practical full stack web development bootcamp: JavaScript, React, Python, Docker, Flask, API, Bootstrap, Git and Postman</field>
         </record>
 
         <record model="lms.general.status" id="4">
             <field name="active">True</field>
+            <field name="default">False</field>
             <field name="name">Ready</field>
             <field name="description">Learn everything about Internet - Ethernet, IP, Routing, Switching, TCP, UDP, NAT, DHCP and DNS, prepare for CCNA exam</field>
         </record>
 
         <record model="lms.general.status" id="5">
             <field name="active">True</field>
+            <field name="default">False</field>
             <field name="name">Re Cost</field>
             <field name="description">Complete Docker Training - learn all core Docker features including Dockerfiles and Docker Compose - great for beginners</field>
         </record>
 
         <record model="lms.general.status" id="6">
             <field name="active">True</field>
+            <field name="default">False</field>
             <field name="name">Cancelled</field>
             <field name="description">Complete Docker Training - learn all core Docker features including Dockerfiles and Docker Compose - great for beginners</field>
         </record>

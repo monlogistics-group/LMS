@@ -13,8 +13,8 @@
 		<field name="arch" type="xml">
 			<tree>
 				<field name="name" />
-				<field name="origin_country" />
-				<field name="destination_country" />
+				<field name="origin_point" />
+				<field name="destination_point" />
 			</tree>
 		</field>
 	</record>
@@ -28,18 +28,28 @@
 					<t t-name="kanban-box">
 						<div t-attf-class="oe_kanban_global_click">
 							<div class="oe_title">
-								<b><field name="name"/></b>
+								<b>
+									<field name="name" />
+								</b>
 							</div>
 							<div class="oe_title badge badge-primary text-white">
-								<b><field name="state"/></b>
+								<b>
+									<field name="state" />
+								</b>
 							</div>
 							<div class="badge badge-secondary text-white">
-								<field name="customer_id"/>
+								<field name="customer_id" />
 							</div>
 							<div>
-								Origin: <b><field name="origin_country"/></b>
+								Origin:
+								<b>
+									<field name="origin_point" />
+								</b>
 								<span class="float-right">
-									Destination: <b><field name="destination_country"/></b>
+									Destination:
+									<b>
+										<field name="destination_point" />
+									</b>
 								</span>
 							</div>
 						</div>
@@ -65,7 +75,7 @@
 		<field name="arch" type="xml">
 			<form>
 				<header>
-					<field name="state" widget="statusbar" nolabel="1" options="{'clickable':'1'}"/>
+					<field name="state" widget="statusbar" nolabel="1" options="{'clickable':'1'}" attrs="{'select':'1'}" />
 				</header>
 				<sheet>
 					<div class="oe_title">
@@ -73,32 +83,58 @@
 							<field name="name" readonly="1" />
 						</h1>
 					</div>
-					<group name="group_top">
-						<group name="group_left">
+					<group string="General Details">
+						<group>
 							<field name="customer_id" widget="res_partner_many2one" options="{'always_reload': True}" />
-							<field name="gross_weigth" />
-							<field name="volume" />
-							<field name="package_qty" />
-							<field name="package_img" widget="image" />
-							<field name="freigth_types" />
-							<field name="package_name" />
-							<field name="origin_country" />
-							<field name="origin_address" />
-							<field name="destination_country" />
+							<field name="operation_types" />
+							<field name="consignee_id" widget="res_partner_many2one" options="{'always_reload': True}" />
 						</group>
-						<group name="group_right">
-							<field name="destination_delivery" />
-							<field name="pickup_date" />
-							<field name="delivery_date" />
-							<field name="estimated_cost" />
-							<field name="mltr_cost" />
-							<field name="contact_name" widget="google_places"/>
-							<field name="contact_details" />
-							<field name="temprature" />
-							<field name="fleet_id" widget="fleet_vehicle_many2one" options="{'always_reload': True}" />
-							<field name="notice" />
+						<group>
+							<field name="freigth_types" />
+							<field name="shipper_id" widget="res_partner_many2one" options="{'always_reload': True}" />
 						</group>
 					</group>
+					<group string="Package Types">
+						<group>
+							<label for="gross_weigth" />
+							<div class="o_row">
+								<field name="gross_weigth" />
+								<span>kg</span>
+							</div>
+							<field name="fleet_id" />
+							<field name="driver_id" />
+						</group>
+						<group>
+							<label for="volume" />
+							<div class="o_row">
+								<field name="volume" />
+								<span>㎥</span>
+							</div>
+							<field name="package_qty" />
+						</group>
+					</group>
+					<group string="Details">
+						<group>
+							<field name="estimated_cost" />
+							<field name="origin_point" />
+							<field name="estimated_pickup" />
+							<field name="actual_pickup" />
+						</group>
+						<group>
+							<field name="actual_cost" />
+							<field name="destination_point" />
+							<field name="estimated_delivery" />
+							<field name="actual_delivery" />
+						</group>
+					</group>
+					<group>
+						<field name="notice" />
+					</group>
+
+					<notebook>
+						<page string="fuck you" />
+						<page string="ihatetuvshoo" />
+					</notebook>
 				</sheet>
 			</form>
 		</field>
