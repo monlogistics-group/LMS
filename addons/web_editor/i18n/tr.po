@@ -802,7 +802,7 @@ msgstr "Vazgeç"
 #. module: web_editor
 #: model_terms:ir.ui.view,arch_db:web_editor.snippets
 msgid "Discard record"
-msgstr ""
+msgstr "Değişiklikten vazgeç"
 
 #. module: web_editor
 #: model:ir.model.fields,field_description:web_editor.field_web_editor_converter_test_sub__display_name
@@ -1019,6 +1019,13 @@ msgstr "Font Rengi"
 #, python-format
 msgid "Font size"
 msgstr "Yazı Boyutu"
+
+#. module: web_editor
+#. openerp-web
+#: code:addons/web_editor/static/src/js/editor/snippets.editor.js:0
+#, python-format
+msgid "For technical reasons, this block cannot be dropped here"
+msgstr ""
 
 #. module: web_editor
 #. openerp-web
@@ -1335,6 +1342,12 @@ msgstr ""
 #, python-format
 msgid "Install"
 msgstr "Yükle"
+
+#. module: web_editor
+#: code:addons/web_editor/models/ir_ui_view.py:0
+#, python-format
+msgid "Invalid field value for %s: %s"
+msgstr ""
 
 #. module: web_editor
 #. openerp-web
@@ -2814,13 +2827,6 @@ msgstr ""
 "yükleyebilirsiniz."
 
 #. module: web_editor
-#: code:addons/web_editor/models/ir_qweb.py:0
-#: code:addons/web_editor/models/ir_qweb.py:0
-#, python-format
-msgid "You entered an invalid value, please try again."
-msgstr ""
-
-#. module: web_editor
 #: code:addons/web_editor/controllers/main.py:0
 #, python-format
 msgid "You need to specify either data or url to create an attachment."
@@ -2973,7 +2979,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:web_editor.snippet_options
 #: model_terms:ir.ui.view,arch_db:web_editor.snippet_options_background_options
 msgid "⌙ Colors"
-msgstr ""
+msgstr "⌙ Renkler"
 
 #. module: web_editor
 #. openerp-web
@@ -2990,7 +2996,7 @@ msgstr ""
 #. module: web_editor
 #: model_terms:ir.ui.view,arch_db:web_editor.snippet_options_background_options
 msgid "⌙ Height"
-msgstr ""
+msgstr "⌙ Yükseklik"
 
 #. module: web_editor
 #: model_terms:ir.ui.view,arch_db:web_editor.snippet_options_background_options
@@ -3042,7 +3048,7 @@ msgstr ""
 #: code:addons/web_editor/static/src/xml/wysiwyg.xml:0
 #, python-format
 msgid "⌙ Style"
-msgstr ""
+msgstr "⌙ Still"
 
 #. module: web_editor
 #. openerp-web
@@ -3054,7 +3060,7 @@ msgstr ""
 #. module: web_editor
 #: model_terms:ir.ui.view,arch_db:web_editor.snippet_options_background_options
 msgid "⌙ Width"
-msgstr ""
+msgstr "⌙ Genişlik"
 
 #. module: web_editor
 #. openerp-web
