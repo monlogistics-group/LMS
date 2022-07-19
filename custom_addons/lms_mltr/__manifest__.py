@@ -18,7 +18,9 @@
         'views/datas/operation_type.xml',
         'views/datas/operation_status.xml',
         'views/layouts/menu.xml',
-        'views/models/general.xml'
+        'views/models/general.xml',
+        'views/models/order.xml',
+        'views/models/package.xml'
     ],
     'demo': [
         'demo/general_status.xml',

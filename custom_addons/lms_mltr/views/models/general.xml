@@ -132,10 +132,36 @@
 					</group>
 
 					<notebook>
-						<page string="fuck you" />
-						<page string="ihatetuvshoo" />
+						<page string="Orders">
+							<field name="general_order" mode="tree,form" >
+								<tree>
+									<field name="name"/>
+									<field name="description"/>
+									<field name="operation_types"/>
+									<field name="gross_weigth"/>
+									<field name="volume"/>
+									<field name="quantity"/>
+								</tree>
+							</field>
+						</page>
+						<page string="Packages">
+							<field name="general_package" mode="tree,form" >
+								<tree>
+									<field name="name"/>
+									<field name="description"/>
+									<field name="operation_types"/>
+									<field name="gross_weigth"/>
+									<field name="volume"/>
+								</tree>
+							</field>
+						</page>
 					</notebook>
 				</sheet>
+				<div class="oe_chatter">
+					<field name="message_follower_ids" />
+					<field name="activity_ids" />
+					<field name="message_ids" />
+				</div>
 			</form>
 		</field>
 	</record>

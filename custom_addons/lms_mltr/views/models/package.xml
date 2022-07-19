@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<!-- General Package Action -->
+	<record id="lms_general_package_action" model="ir.actions.act_window">
+		<field name="name">LMS Package General</field>
+		<field name="res_model">lms.general.package</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+	<!-- General Package Tree List view -->
+	<record id="lms_general_package_view_tree" model="ir.ui.view">
+		<field name="name">LMS Tree</field>
+		<field name="model">lms.general.package</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="name" />
+				<field name="description" />
+				<field name="operation_types" />
+				<field name="package" />
+				<field name="volume" />
+				<field name="gross_weigth" />
+			</tree>
+		</field>
+	</record>
+	<!-- General Package Form View -->
+	<record id="lms_general_package_view_form" model="ir.ui.view">
+		<field name="name">lms.general.package.form</field>
+		<field name="model">lms.general.package</field>
+		<field name="arch" type="xml">
+			<form>
+				<sheet>
+					<div class="oe_title">
+						<h1>
+							<field name="name" readonly="1" />
+						</h1>
+					</div>
+					<group>
+                        <field name="package" />
+						<field name="operation_types"/>
+						<field name="description"/>
+						<field name="gross_weigth"/>
+						<field name="volume"/>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+	<!-- General Model in Menu -->
+	<menuitem id="lms_general_package" name="Package" parent="lms_operation_menu" action="lms_general_package_action" />
+</odoo>

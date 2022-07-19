@@ -2,7 +2,9 @@
 import logging
 from odoo import models, fields, api, _
 
+
 class General(models.Model):
+    _inherit = ['mail.thread', 'mail.activity.mixin']
     _name = 'lms.general'
     _description = 'LMS general information'
 
@@ -33,6 +35,10 @@ class General(models.Model):
     notice = fields.Text(string="Notice")
     state = fields.Many2one('lms.general.status', string="State",
                             default=lambda self: self.env['lms.general.status'].search([('default', '=', 'True')]))
+    general_order = fields.One2many(
+        'lms.general.order', 'general_id', string="Orders")
+    general_package = fields.One2many(
+        'lms.general.package', 'general_id', string="Package")
 
     @api.model
     def create(self, vals):
