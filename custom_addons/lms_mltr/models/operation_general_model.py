@@ -32,14 +32,14 @@ class General(models.Model):
     estimated_delivery = fields.Date(string="Delivery Date")
     actual_delivery = fields.Date(string="Delivery Date")
 
-    notice = fields.Text(string="Notice")
+    notice = fields.Char(string="Notice")
     state = fields.Many2one('lms.general.status', string="State",
                             default=lambda self: self.env['lms.general.status'].search([('default', '=', 'True')]))
-    general_order = fields.One2many(
-        'lms.general.order', 'general_id', string="Orders")
-    general_package = fields.One2many(
-        'lms.general.package', 'general_id', string="Package")
-
+    general_order = fields.Many2many(
+        'lms.general.order', 'name', string="Orders")
+    sales_products = fields.Many2many(
+        'product.template', 'id', string="Product"
+    )
     @api.model
     def create(self, vals):
         if vals.get('name', _('New')) == _('New'):

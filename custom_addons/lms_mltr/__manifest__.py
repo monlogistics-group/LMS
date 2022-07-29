@@ -17,6 +17,7 @@
         'views/datas/freight_type.xml',
         'views/datas/operation_type.xml',
         'views/datas/operation_status.xml',
+        'views/datas/services_type.xml',
         'views/layouts/menu.xml',
         'views/models/general.xml',
         'views/models/order.xml',

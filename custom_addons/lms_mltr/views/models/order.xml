@@ -13,7 +13,6 @@
 		<field name="arch" type="xml">
 			<tree>
 				<field name="name" />
-				<field name="general_id" />
 				<field name="operation_types" />
 				<field name="description" />
 				<field name="volume" />
@@ -35,7 +34,6 @@
 						</h1>
 					</div>
 					<group>
-						<field name="general_id"/>
 						<field name="operation_types"/>
 						<field name="description"/>
 						<field name="gross_weigth"/>

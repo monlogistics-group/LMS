@@ -128,7 +128,7 @@
 						</group>
 					</group>
 					<group>
-						<field name="notice" />
+						<field name="notice" widget="gplaces_address_form" options="{'component_form': {'street_number': 'short_name'}}"/>
 					</group>
 
 					<notebook>
@@ -145,7 +145,7 @@
 							</field>
 						</page>
 						<page string="Packages">
-							<field name="general_package" mode="tree,form" >
+							<!-- <field name="general_package" mode="tree,form" >
 								<tree>
 									<field name="name"/>
 									<field name="description"/>
@@ -153,7 +153,10 @@
 									<field name="gross_weigth"/>
 									<field name="volume"/>
 								</tree>
-							</field>
+							</field> -->
+						</page>
+						<page string="Services">
+							<field name="sales_products"/>
 						</page>
 					</notebook>
 				</sheet>
