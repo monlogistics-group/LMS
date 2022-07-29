@@ -38,5 +38,5 @@ pip3 install -r requirements.txt
 ```
 5. Odoo-г ажлуулах
 ```
-python3 odoo-bin --addons-path=addons -d mydb
+python3 odoo-bin --addons-path=addons,custom_addons -d mydb
 ```

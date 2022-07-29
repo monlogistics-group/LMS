@@ -1,4 +1,19 @@
-from odoo import models, fields, api, _ 
+from odoo import models, fields, api, _
+
+
+"""
+    General Package model
+    -------------------------------
+    general_id = General order id
+    name = REF number
+    package = Package name
+    description = Description
+    operation_types = Operation types
+    gross_weigth = Gross weigth
+    volume = CBM
+    -------------------------------
+"""
+
 
 class GeneralPackage(models.Model):
     _name = 'lms.general.package'

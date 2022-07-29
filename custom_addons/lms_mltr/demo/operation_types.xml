@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <!-- 
+        name: General operation types
+        type: Master data
+        model: lms.operation.type.datas
+        purpose: Enter master datas
+    -->
     <data noupdate="1">
         <record model="lms.operation.type.datas" id="1">
             <field name="active">True</field>

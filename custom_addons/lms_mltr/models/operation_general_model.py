@@ -1,6 +1,36 @@
 # -*- coding: utf-8 -*-
-import logging
 from odoo import models, fields, api, _
+
+
+"""
+    General model
+    -------------------------------
+    name = REF number
+    customer_id = customer
+    consignee_id = consignee
+    shipper_id = shipper
+    operation_types = operation type
+    freight_types = Freight Types
+    gross_weigth = Gross weigth
+    volume = CBM
+    package_qty = Package Quantity
+    fleet_id = vehicle 
+    driver_id = driver tagged
+    estimated_cost = User type cost
+    actual_cost = Cost from service
+    orgin_point = Origin country
+    destination_point = Destiantion country
+    estimated_pickup = Pickup date
+    actual_pickup = Pickup date
+    estimated_delivery = Delivery date
+    actual_delivery = Delivery date
+    notice = Notice text
+    state = Operation status
+    general_order = Order choice
+    general_package = Package choice
+    sales_product = Services choice
+    -------------------------------
+"""
 
 
 class General(models.Model):
@@ -36,10 +66,14 @@ class General(models.Model):
     state = fields.Many2one('lms.general.status', string="State",
                             default=lambda self: self.env['lms.general.status'].search([('default', '=', 'True')]))
     general_order = fields.Many2many(
-        'lms.general.order', 'name', string="Orders")
-    sales_products = fields.Many2many(
-        'product.template', 'id', string="Product"
+        'lms.general.order', string="Orders")
+    general_package = fields.Many2many(
+        'lms.general.package', string="Package"
     )
+    sales_products = fields.Many2many(
+        'product.template', string="Product"
+    )
+
     @api.model
     def create(self, vals):
         if vals.get('name', _('New')) == _('New'):

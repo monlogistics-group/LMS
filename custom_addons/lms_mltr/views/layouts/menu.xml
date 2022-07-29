@@ -8,6 +8,5 @@
 	<menuitem id="lms_config_menu" name="Configration" parent="menu_lms" sequence="2" />
 	<menuitem id="lms_freight_types_menu" name="Freight Type" parent="lms_config_menu" action="lms_freight_type_datas_action" />
 	<menuitem id="lms_operation_types_menu" name="Operation Type" parent="lms_config_menu" action="lms_operation_type_datas_action" />
-	<menuitem id="lms_general_status_menu" name="General Status" parent="lms_config_menu" action="lms_general_status_action"/>
-	<menuitem id="lms_operation_service_types_menu" name="Service Types" parent="lms_config_menu" action="lms_operation_service_type_action"/>
+	<menuitem id="lms_general_status_menu" name="General Status" parent="lms_config_menu" action="lms_general_status_action" />
 </odoo>

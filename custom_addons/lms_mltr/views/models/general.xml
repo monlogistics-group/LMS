@@ -121,42 +121,34 @@
 							<field name="actual_pickup" />
 						</group>
 						<group>
-							<field name="actual_cost" />
+							<field name="actual_cost" readonly="1"/>
 							<field name="destination_point" />
 							<field name="estimated_delivery" />
 							<field name="actual_delivery" />
 						</group>
 					</group>
 					<group>
-						<field name="notice" widget="gplaces_address_form" options="{'component_form': {'street_number': 'short_name'}}"/>
+						<field name="notice" widget="gplaces_address_form" options="{'component_form': {'street_number': 'short_name'}}" />
 					</group>
 
 					<notebook>
 						<page string="Orders">
-							<field name="general_order" mode="tree,form" >
+							<field name="general_order" mode="tree,form">
 								<tree>
-									<field name="name"/>
-									<field name="description"/>
-									<field name="operation_types"/>
-									<field name="gross_weigth"/>
-									<field name="volume"/>
-									<field name="quantity"/>
+									<field name="name" />
+									<field name="description" />
+									<field name="operation_types" />
+									<field name="gross_weigth" />
+									<field name="volume" />
+									<field name="quantity" />
 								</tree>
 							</field>
 						</page>
 						<page string="Packages">
-							<!-- <field name="general_package" mode="tree,form" >
-								<tree>
-									<field name="name"/>
-									<field name="description"/>
-									<field name="operation_types"/>
-									<field name="gross_weigth"/>
-									<field name="volume"/>
-								</tree>
-							</field> -->
+							<field name="general_package" />
 						</page>
 						<page string="Services">
-							<field name="sales_products"/>
+							<field name="sales_products" />
 						</page>
 					</notebook>
 				</sheet>

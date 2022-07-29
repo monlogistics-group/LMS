@@ -34,11 +34,11 @@
 						</h1>
 					</div>
 					<group>
-                        <field name="package" />
-						<field name="operation_types"/>
-						<field name="description"/>
-						<field name="gross_weigth"/>
-						<field name="volume"/>
+						<field name="package" />
+						<field name="operation_types" />
+						<field name="description" />
+						<field name="gross_weigth" />
+						<field name="volume" />
 					</group>
 				</sheet>
 			</form>

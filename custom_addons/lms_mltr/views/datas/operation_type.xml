@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
+	<!-- Operation Type Action -->
 	<record id="lms_operation_type_datas_action" model="ir.actions.act_window">
 		<field name="name">Operation type</field>
 		<field name="res_model">lms.operation.type.datas</field>
 		<field name="view_mode">tree,form</field>
 	</record>
+	<!-- Operation Type Form -->
 	<record id="lms_operation_type_datas_form" model="ir.ui.view">
 		<field name="name">lms.datas.operation.form</field>
 		<field name="model">lms.operation.type.datas</field>
@@ -12,7 +14,7 @@
 			<form>
 				<sheet>
 					<group>
-						<field name="active"/>
+						<field name="active" />
 						<field name="name" />
 						<field name="description" />
 					</group>
@@ -20,13 +22,14 @@
 			</form>
 		</field>
 	</record>
+	<!-- Operation Type Tree -->
 	<record id="lms_operation_type_datas_tree" model="ir.ui.view">
 		<field name="name">lms.datas.operation.tree</field>
 		<field name="model">lms.operation.type.datas</field>
 		<field name="arch" type="xml">
 			<tree>
-				<field name="id" widget="handle"/>
-				<field name="name"/>
+				<field name="id" widget="handle" />
+				<field name="name" />
 				<field name="description" />
 			</tree>
 		</field>

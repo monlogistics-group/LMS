@@ -1,13 +1,27 @@
 from odoo import models, fields, api, _
 
 
+"""
+    General Order model
+    -------------------------------
+    general_id = General order id
+    name = REF number
+    description = Description
+    operation_types = Operation types
+    gross_weigth = Gross weigth
+    volume = CBM
+    quantity = Quantity
+    -------------------------------
+"""
+
+
 class GeneralOrder(models.Model):
     _name = 'lms.general.order'
     _description = 'Order field for general order'
 
-    general_id = fields.Many2one('lms.general',string="Order Ref")
-    name = fields.Char(string="ID", required=True,
-                          readonly=True, default=lambda self: _('New'))
+    general_id = fields.Many2one('lms.general', string="Order Ref")
+    name = fields.Char(string="Ref", required=True,
+                       readonly=True, default=lambda self: _('New'))
     description = fields.Text(string="Description")
     operation_types = fields.Many2one(
         'lms.operation.type.datas', string="Operation Types")
