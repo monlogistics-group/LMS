@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
+from email.policy import strict
 from odoo import models, fields, api, _
-
+from datetime import date, timedelta
 
 """
     General model
@@ -26,8 +27,8 @@ from odoo import models, fields, api, _
     actual_delivery = Delivery date
     notice = Notice text
     state = Operation status
-    general_order = Order choice
     general_package = Package choice
+    general_order = Order choice
     sales_product = Services choice
     -------------------------------
 """
@@ -71,13 +72,48 @@ class General(models.Model):
         'lms.general.package', string="Package"
     )
     sales_products = fields.Many2many(
-        'product.template', string="Product"
+        'product.product', string="Product"
+    )
+    declaration_number = fields.Char(string="Declaration Number")
+    declaration_date = fields.Date(string="Declaration Date")
+    customs_clerance_date = fields.Date(string="Customs Clearance Date")
+    tracking = fields.Many2many(
+        'lms.general.order.tracking', string="Tracking"
     )
 
-    @api.model
-    def create(self, vals):
-        if vals.get('name', _('New')) == _('New'):
-            vals['name'] = self.env['ir.sequence'].next_by_code(
-                'lms.general') or _('New')
-        res = super(General, self).create(vals)
-        return res
+    def create_invoice(self):
+        products = []
+        for product in self.sales_products:
+            one = self.env['product.product'].search([('id','=',product.id)])
+            products.append((
+                0,
+                0,
+                {
+                    'product_id': one.id,
+                    'price_unit': one.list_price
+                }
+            ))
+
+        invoices = self.env['account.move'].create([
+            {
+                'move_type': 'out_invoice',
+                'partner_id': self.customer_id.id,
+                'invoice_date': date.today(),
+                'invoice_date_due': date.today()+timedelta(days=14),
+                'invoice_line_ids': products,
+            },
+        ])
+        invoices.action_post()
+        ## FOR REGISTER AS PAID
+        # for invoice in invoices:
+        #     self.env['account.payment.register'].with_context(active_model='account.move', active_ids=invoice.ids).create({})._create_payments()
+        invoices.flush()
+
+class Tracking(models.Model):
+    _name = "lms.general.order.tracking"
+    _description = "LMS general order tracking"
+
+    location = fields.Char(string="Location")
+    description = fields.Char(string="Description")
+    date = fields.Date(string="Date")
+

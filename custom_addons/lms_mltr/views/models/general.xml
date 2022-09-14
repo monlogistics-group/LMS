@@ -76,6 +76,7 @@
 			<form>
 				<header>
 					<field name="state" widget="statusbar" nolabel="1" options="{'clickable':'1'}" attrs="{'select':'1'}" />
+
 				</header>
 				<sheet>
 					<div class="oe_title">
@@ -121,7 +122,7 @@
 							<field name="actual_pickup" />
 						</group>
 						<group>
-							<field name="actual_cost" readonly="1"/>
+							<field name="actual_cost" readonly="1" />
 							<field name="destination_point" />
 							<field name="estimated_delivery" />
 							<field name="actual_delivery" />
@@ -148,7 +149,24 @@
 							<field name="general_package" />
 						</page>
 						<page string="Services">
-							<field name="sales_products" />
+							<button string="Generate invoice" type="object" name="create_invoice" class="oe_highlight"/>
+							<field name="sales_products"  widget="product_product_many2many"/>
+						</page>
+						<page string="Customs">
+							<group>
+								<field name="declaration_number" />
+								<field name="declaration_date" />
+								<field name="customs_clerance_date" />
+							</group>
+						</page>
+						<page string="Tracking">
+							<field name="tracking" mode="tree,form">
+								<tree>
+									<field name="location" />
+									<field name="description" />
+									<field name="date" />
+								</tree>
+							</field>
 						</page>
 					</notebook>
 				</sheet>

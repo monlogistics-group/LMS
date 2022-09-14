@@ -5,3 +5,4 @@ access_lms_operation_type_datas,lms.operation.type.datas,model_lms_operation_typ
 access_lms_general_status,lms.general.status,model_lms_general_status,base.group_user,1,1,1,1
 access_lms_general_order,lms.general.order,model_lms_general_order,base.group_user,1,1,1,1
 access_lms_general_package,lms.general.package,model_lms_general_package,base.group_user,1,1,1,1
+access_lms_general_order_tracking,lms.general.order.tracking,model_lms_general_order_tracking,base.group_user,1,1,1,1
